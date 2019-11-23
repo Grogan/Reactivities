@@ -11,12 +11,12 @@ import ActivityDetails from "../../features/activities/details/ActivityDetails";
 const App: React.FC<RouteComponentProps> = ({ location }) => {
   return (
     <Fragment>
-      <NavBar />
       <Route exact path="/" component={HomePage} />
       <Route
         path={"/(.+)"}
         render={() => (
           <Fragment>
+            <NavBar />
             <Container style={{ marginTop: "7em" }}>
               <Route exact path="/activities" component={ActivityDashboard} />
               <Route path="/activities/:id" component={ActivityDetails} />
